@@ -50,7 +50,7 @@ jobs:
       run: cd Terraform;terraform init
 
     - name: Terraform Plan
-      run: cd Terraform;terraform plan -var="image_url=${{ vars.ECR_NAME }}/servian:latest" -var="dbname=${{ secrets.DBNAME }}" -var="dbuser=${{ secrets.DBUSER }}" -var="dbpassword=${{ secrets.DBPASSWORD }}" -input=false -input=false
+      run: cd Terraform;terraform plan -var="image_url=${{ vars.ECR_LOGIN }}/servian:latest" -var="dbname=${{ secrets.DBNAME }}" -var="dbuser=${{ secrets.DBUSER }}" -var="dbpassword=${{ secrets.DBPASSWORD }}" -input=false -input=false
 
     # Applying changes to Infrastructure (for each environment)
     - name: Terraform Apply/Destroy
