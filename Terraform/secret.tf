@@ -29,15 +29,15 @@ resource "aws_ssm_parameter" "listenport" {
 }
 
 resource "aws_secretsmanager_secret" "dbuser" {
-  name = "${var.project_name}_dbuser1"
+  name = "${var.project_name}_dbuser2"
 }
 
 resource "aws_secretsmanager_secret" "dbpassword" {
-  name = "${var.project_name}_dbpassword1"
+  name = "${var.project_name}_dbpassword2"
 }
 
 resource "aws_secretsmanager_secret" "dbname" {
-  name = "${var.project_name}_dbname1"
+  name = "${var.project_name}_dbname2"
 }
 
 
