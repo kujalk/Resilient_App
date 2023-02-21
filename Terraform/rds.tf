@@ -19,6 +19,7 @@ resource "aws_db_instance" "postgres" {
   username                = var.dbuser
   password                = var.dbpassword
   backup_retention_period = 0
+  multi_az                = true
   identifier              = "${var.project_name}-postgres-server"
   publicly_accessible     = "false"
   skip_final_snapshot     = "true"
