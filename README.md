@@ -8,7 +8,7 @@ AWS Resilent App Project Demo
 - Secret Manager
 - IAM Roles with least privileges 
 - Application LB to load balance the traffic
-- VPC subnets with Network GW for private Subent and Inter GW for Public Subnet
+- VPC subnets with Network GW for private Subent and Internet GW for Public Subnet
 
 ## Architecture 
 <kbd>
@@ -17,9 +17,9 @@ AWS Resilent App Project Demo
 
 ## Features
 
-1. All sensitive values are stored in AWS Secret Manger
+1. All sensitive values are stored in AWS Secret Manger such as DBUser, DBPassword, DBName
 2. Non sensitive values are stored in SSM Parameter store, which is passed to ECS tasks on runtime which helps to update the configuration easily 
-3. App and RDS Postgres are created in private subnet therefore reduce the risk
+3. App and RDS Postgres are created in private subnet thereby reduce the risk
 4. ALB is hosted in public subnet and serve the traffic to App and helps in distributing the traffic in equally
 5. ALB is also enabled with health check. So traffic to non-healthy tasks will be not forwarded
 6. Autoscaling on ecs is enabled
@@ -32,7 +32,7 @@ AWS Resilent App Project Demo
 
 ## Pre-Requisites
 
-1. Create a __S# Bucket __ to store the Terraform backend file and update the __main.tf__
+1. Create a __S3 Bucket __ to store the Terraform backend file and update the __main.tf__
 ```terraform
 terraform {
   backend "s3" {
