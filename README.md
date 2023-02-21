@@ -29,6 +29,7 @@ AWS Resilent App Project Demo
 10. IAM roles with least privileges and only required permissions in assigned 
 11. RDS is only allowed traffic from ECS app 
 
+__Future Enhancements__  - We can buy a domain in R53 and add a HTTPS certificate hosted in ACM  to the ALB to make the app more secure
 
 ## Pre-Requisites
 
