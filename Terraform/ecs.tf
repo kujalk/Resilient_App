@@ -1,3 +1,4 @@
+//ECS cluster
 resource "aws_ecs_cluster" "fargate" {
   name = "${var.project_name}_fargate_cluster"
 }
@@ -14,6 +15,7 @@ resource "aws_ecs_cluster_capacity_providers" "fargate" {
   }
 }
 
+//Task definition
 resource "aws_ecs_task_definition" "task" {
   family                   = "${var.project_name}_ecs_task"
   requires_compatibilities = ["FARGATE"]
@@ -84,7 +86,7 @@ resource "aws_ecs_task_definition" "task" {
 EOF
 }
 
-
+//Enabling ALB
 resource "aws_ecs_service" "go-api" {
   name            = "${var.project_name}_ecs_service"
   cluster         = aws_ecs_cluster.fargate.id
@@ -103,6 +105,7 @@ resource "aws_ecs_service" "go-api" {
   }
 }
 
+//Enabling Autoscaling
 resource "aws_appautoscaling_target" "ecs_target" {
   max_capacity       = 4
   min_capacity       = 1

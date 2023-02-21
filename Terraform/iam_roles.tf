@@ -1,3 +1,4 @@
+//IAM role for ECS
 resource "aws_iam_role" "ecs_role" {
   name = "${var.project_name}-ecs-role"
 

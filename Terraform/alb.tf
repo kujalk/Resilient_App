@@ -1,3 +1,4 @@
+// ALB creation
 resource "aws_lb" "test" {
   name               = "${var.project_name}-alb"
   internal           = false
@@ -6,6 +7,7 @@ resource "aws_lb" "test" {
   subnets            = [aws_subnet.public1.id, aws_subnet.public2.id]
 }
 
+//Listener Addition
 resource "aws_lb_listener" "front_end" {
   load_balancer_arn = aws_lb.test.arn
   port              = "80"
@@ -17,6 +19,7 @@ resource "aws_lb_listener" "front_end" {
   }
 }
 
+//Target group configuration
 resource "aws_lb_target_group" "test" {
   name        = "${var.project_name}-targetgroup"
   port        = 80
