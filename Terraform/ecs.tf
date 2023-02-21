@@ -30,7 +30,7 @@ resource "aws_ecs_task_definition" "task" {
     "image": "${var.image_url}",
     "cpu": 256,
     "memory": 512,
-    "command": ["updatedb"],
+    "command": ["serve"],
     "logConfiguration": {
           "logDriver": "awslogs",
           "options": {
