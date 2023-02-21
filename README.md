@@ -1,5 +1,5 @@
 ## Project
-AWS Resilent App Project Demo
+AWS Resilient App Project Demo 
 
 ## Resources Created
 - ECS Fargate App
@@ -114,4 +114,3 @@ storage_type        = "gp2"
 <kbd>
   <img src="Diagram/Destroy.png">
 </kbd>
-
