@@ -32,7 +32,7 @@ AWS Resilent App Project Demo
 
 ## Pre-Requisites
 
-1. Create a __S3 Bucket __ to store the Terraform backend file and update the __main.tf__
+1. Create a  __S3 Bucket__ to store the Terraform backend file and update the __main.tf__
 ```terraform
 terraform {
   backend "s3" {
